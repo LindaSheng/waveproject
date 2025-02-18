@@ -118,10 +118,20 @@
             gap: 1rem;
             position: absolute;
             top: 50%;
-            left: 10rem;
+            left: 8rem;
             opacity: 0;
             transform: translateY(10px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .explain {
+            line-height: 2rem;
+            position: absolute;
+            top: 20%;
+            left: 60rem;
+            right:10rem;
+            font-size:1rem;
+            font-family: "Hepta Slab", serif;
         }
 
         .text {
@@ -153,6 +163,7 @@
         <div class="text three">I hear the Odyssey and Iliad rise</div>
     </div>
 
+    <div class="explain" id="explain"></div>
     <script>
         window.addEventListener('load', function() {
             const circle = document.createElement('div');
@@ -167,6 +178,29 @@
                 textbox.style.opacity = '1';
                 textbox.style.transform = 'translateY(0)';
             }, 500);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const explainText = "Henry Jerome Stockard uses the color silver to describe a voice. In this instance, the silver voices are waking the water. It makes you think of a voice that is clear and musical like an instrument.";
+            const explainElement = document.getElementById("explain");
+
+            let index = 0;
+            let cursorVisible = true;
+
+            setTimeout(() => {
+                const typingInterval = setInterval(() => {
+                    if (index < explainText.length) {
+                        explainElement.innerHTML = explainText.substring(0, index) + "<span class='cursor'>|</span>";
+                        index++;
+                    } else {
+                        clearInterval(typingInterval); 
+                        setInterval(() => {
+                            cursorVisible = !cursorVisible;
+                            document.querySelector(".cursor").style.opacity = cursorVisible ? "1" : "0";
+                        }, 500);
+                    }
+                }, 44); 
+            }, 2000);
         });
     </script>
 </body>
