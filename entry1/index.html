@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Animation on Load</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container-one{
+            width: 100%;
+            height: 100vh;
+        }
+        .top-bar{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top:0;
+            left:0;
+            background-color: rgb(255, 255, 255);
+            width:100%;
+            height:auto;
+            z-index: 999;
+        }
+        .top-one{
+            background-color:#E7FF60;
+            height:1.25rem;
+            border: 2px solid black;
+            border-bottom:0px;
+        }
+        .top-two{
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            height: 2rem;
+            border: 2px solid black;
+            font-family: "Hepta Slab", serif;
+            font-size: 12px;
+        }
+        .top-left{
+            flex:2;
+            display: flex;
+            padding-left:1em;
+            align-items: center;
+            border-right: 2px solid black;
+
+        }
+        .top-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex:6;
+        }
+        .top-right{
+            background-color: black;
+            color: aliceblue;
+            flex:2;
+            display: flex;
+            padding-left:1em;
+            align-items: center;
+            border-left: 2px solid black;
+        }
+
+        .bottom{
+            display:flex;
+            color: aliceblue;
+            position: fixed; 
+            bottom: 0;           
+            left: 0;           
+            width: 100%;       
+            height:1.25rem; 
+            background-color: black;
+            align-items: center;
+            padding-left:1em;
+            font-size: 0.9em;
+            z-index: 999;
+            border-bottom:1px solid rgb(255, 255, 255);
+        }
+        body {
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            overflow: hidden; /* 防止圆形动画溢出 */
+        }
+
+        .circle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color:#FFE83D;
+            border-radius: 50%;
+            animation: grow 1s ease-out forwards;
+            filter: saturate(100%); /* 确保饱和度保持100% */
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(28);
+                opacity: 1; /* 保持不透明 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-one">
+        <div class="top-bar">
+            <div class="top-one"></div>
+            <div class="top-two">
+                <div class="top-left">about</div>
+                <div class="top-center"> A Website About Poems</div>
+                <div class="top-right">about</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="bottom"></div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            
+            const centerY = window.innerHeight / 2;
+            
+            circle.style.left = `240px`; 
+            circle.style.top = `${centerY - 10}px`; 
+
+            document.body.appendChild(circle);
+        });
+    </script>
+
+</body>
+</html>

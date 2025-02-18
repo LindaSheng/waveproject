@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poems of Synesthesia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap" rel="stylesheet">
+    <style>
+       body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url("one.png") no-repeat center center;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container-one{
+            width: 100%;
+            height: 100vh;
+        }
+        .top-bar{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top:0;
+            left:0;
+            background-color: rgb(255, 255, 255);
+            width:100%;
+            height:auto;
+            z-index: 999;
+        }
+        .top-one{
+            background-color:#E7FF60;
+            height:1.25rem;
+            border: 2px solid black;
+            border-bottom:0px;
+        }
+        .top-two{
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            height: 2rem;
+            border: 2px solid black;
+            font-family: "Hepta Slab", serif;
+            font-size: 12px;
+        }
+        .top-left{
+            flex:2;
+            display: flex;
+            padding-left:1em;
+            align-items: center;
+            border-right: 2px solid black;
+
+        }
+        .top-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex:6;
+        }
+        .top-right{
+            background-color: black;
+            color: aliceblue;
+            flex:2;
+            display: flex;
+            padding-left:1em;
+            align-items: center;
+            border-left: 2px solid black;
+        }
+
+        .bottom{
+            display:flex;
+            color: aliceblue;
+            position: fixed; 
+            bottom: 0;           
+            left: 0;           
+            width: 100%;       
+            height:1.25rem; 
+            background-color: black;
+            align-items: center;
+            padding-left:1em;
+            font-size: 0.9em;
+            z-index: 999;
+            border-bottom:1px solid rgb(255, 255, 255);
+        }
+
+
+        .title {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            background-color: #e2ff3f;
+            height: 20rem;
+            width: 56rem;
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 8em;
+            bottom: 10%;
+            left: 4rem;
+            padding-left: 1rem;
+            box-shadow: 0 0 20px 20px rgba(231, 255, 96, 0.5);
+            border-radius: 100px; 
+        }
+
+        .side{
+            position:absolute;
+            background-color: black;
+            width:16rem;
+            top:14%;
+            bottom: 10%;
+            left:74rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+    
+        }
+        .dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+        }
+        .dot.yellow { background: #FFE83D; }
+        .dot.green { background: #6DEBA2; }
+        .dot.blue { background: #64b5f6; }
+
+        .dot:hover {
+        transform: scale(3); 
+        }
+        
+    </style>
+
+</head>
+<body>
+
+<div class="container-one">
+    <div class="top-bar">
+        <div class="top-one"></div>
+        <div class="top-two">
+            <div class="top-left">about</div>
+            <div class="top-center"> A Website About Poems</div>
+            <div class="top-right">about</div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="bottom"></div>
+
+<div class="container-two">
+    <div class="title">Poems of <br>Synesthesia.</div>
+</div>
+
+<div class="side">
+    <a href="./entry1/index.html"><div class="dot yellow"></div></a>
+    <div class="dot green"></div>
+    <div class="dot blue"></div>
+</div>
+
+
+</body>
+</html>
