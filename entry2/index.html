@@ -94,7 +94,7 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background-color: #56e0ff;
+            background-color:#b3acff;
             border-radius: 50%;
             animation: grow 1s ease-out forwards;
             filter: saturate(100%);
@@ -146,7 +146,7 @@
             width: 4rem;
             height: 4rem;
             border-radius: 50%;
-            background-color: #796dff;
+            background-color: #d264f6;
             right: 4rem;
             bottom: 4rem;
             transition: transform 0.5s ease;
@@ -172,18 +172,20 @@
     <div class="bottom"></div>
 
     <div class="textbox">
-        <div class="text one">While silver voices wake the waters o'er</div>
-        <div class="text two">'Mid asphodels on Anthemusia's leas</div>
-        <div class="text three">I hear the Odyssey and Iliad rise</div>
+        <div class="text one">In some melodious plot,</div>
+        <div class="text two">Of beechen green,</div>
+        <div class="text three">Singest of summer in full throated ease
+
+        </div>
     </div>
 
     <div class="explain" id="explain"></div>
-    <a  href="../entry2/index.html"><div class="bluedot"></div></a>
+    <a href="../entry3/index.html"><div class="bluedot"></div></a>
 
 
 
     <script>
-        window.addEventListener('load', function() {
+       window.addEventListener('load', function() {
             const circle = document.createElement('div');
             circle.classList.add('circle');
             const centerY = window.innerHeight / 2;
@@ -197,9 +199,8 @@
                 textbox.style.transform = 'translateY(0)';
             }, 500);
         });
-
         document.addEventListener('DOMContentLoaded', function() {
-            const explainText = "Henry Jerome Stockard uses the color silver to describe a voice. In this instance, the silver voices are waking the water. It makes you think of a voice that is clear and musical like an instrument.";
+            const explainText = "In this example of synesthesia, Keats connects visual and auditory senses. The description of the plot of ground and how it sings of summer give the visual more depth and feeling.";
             const explainElement = document.getElementById("explain");
 
             let index = 0;
